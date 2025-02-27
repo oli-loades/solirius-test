@@ -7,4 +7,4 @@ const init = () => {
     return store
 }
 
-module.exports = init
+module.exports = init()

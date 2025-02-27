@@ -1,4 +1,4 @@
-const store = require('../../utils/store')()
+const store = require('../../utils/store')
 const { mockValidateEmail } = require('../../utils/emailValidation')
 
 const processData = async (fileId, data) => {
