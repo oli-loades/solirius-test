@@ -1,11 +1,10 @@
-let map
+let store
 
-const store = () => {
-    if (!map) {
-        return new Map()
-    } else {
-        return map
-    }
+const init = () => {
+    if (!store) {
+        store = new Map()
+    } 
+    return store
 }
 
-module.exports = store
+module.exports = init
