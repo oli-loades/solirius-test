@@ -8,7 +8,13 @@ const processData = async (fileId, data) => {
     let successCount = 0
     for (const record of data) {
         curr++
-        const isValid = await mockValidateEmail(record.email)
+
+        let isValid = false
+        try {
+            isValid = await mockValidateEmail(record.email)
+        } catch (err) {
+            throw new Error('Validation timeout')
+        }
         
         if (isValid) {
             successCount++
