@@ -10,3 +10,9 @@ Simple API to upload and process CSVs conatining name and email.
 npm install
 npm run dev
 ```
+
+## Tests
+Run tests
+```
+npm run test
+```
