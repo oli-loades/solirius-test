@@ -12,4 +12,4 @@ const mockValidateEmail = async (email) => {
 
 module.exports = {
     mockValidateEmail
-}
+};
