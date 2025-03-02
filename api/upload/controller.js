@@ -19,7 +19,7 @@ const upload = async (req, res, next) => {
     const fileId = req.file.filename;
     res.write(`${JSON.stringify({
         uploadId: fileId,
-        message: "File uploaded successfully. Processing started."
+        message: 'File uploaded successfully. Processing started.'
     })}\n`);
 
     const results = [];
@@ -28,7 +28,7 @@ const upload = async (req, res, next) => {
         results.push(data);
     });
     stream.on('error', (err) => logger.error(err));
-    stream.on("end", async () => {
+    stream.on('end', async () => {
         try {
             const result = await service.processData(fileId, results);
             res.end(JSON.stringify(result));
