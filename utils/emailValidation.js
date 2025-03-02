@@ -1,4 +1,4 @@
-const mockValidateEmail = async (email) => {
+module.exports = async (email) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (String(email).match(/^\S+@\S+\.\S+$/)) {
@@ -8,8 +8,4 @@ const mockValidateEmail = async (email) => {
             }
         }, 200);
     });
-};
-
-module.exports = {
-    mockValidateEmail
 };

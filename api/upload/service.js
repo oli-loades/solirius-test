@@ -1,5 +1,5 @@
 const store = require('../../utils/store');
-const { mockValidateEmail } = require('../../utils/emailValidation');
+const validateEmail = require('../../utils/emailValidation');
 const logger = require('../../utils/logger');
 
 const processData = async (fileId, data) => {
@@ -13,7 +13,7 @@ const processData = async (fileId, data) => {
 
         let isValid = false;
         try {
-            isValid = await mockValidateEmail(record.email);
+            isValid = await validateEmail(record.email);
         } catch (err) {
             throw new Error('Validation timeout');
         }
